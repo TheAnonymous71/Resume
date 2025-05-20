@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gaming Cursor Animation</title>
+  <style>
+    body {
+      margin: 0;
+      background: #0a0a0a;
+      height: 100vh;
+      overflow: hidden;
+      cursor: none;
+    }
+
+    .cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      border: 2px solid #00ffea;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #00ffea, 0 0 30px #00ffea;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease-out;
+      animation: pulse 1s infinite;
+      z-index: 9999;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
+      }
+      50% {
+        box-shadow: 0 0 20px #00ffea, 0 0 40px #00ffea;
+      }
+      100% {
+        box-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+
+  <script>
+    const cursor = document.getElementById("cursor");
+
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+    });
+  </script>
+</body>
+</html>
