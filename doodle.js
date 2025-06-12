@@ -1,4 +1,4 @@
-var doodle = (function() {
+var drvee = (function() {
     Function.prototype.bind = Function.prototype.bind || function(fixThis) {
         var func = this
         return function() {
@@ -138,12 +138,12 @@ var doodle = (function() {
         _l("starting from:" + init_x + " ," + init_y);
         var formation = new Formation(init_x, init_y);
 
-        formation.addPlane(0, -0, "0, 128, 0");
-        formation.addPlane(15, -25, "0, 128, 0");
+        formation.addPlane(0, -0, "255, 0, 0");
+        formation.addPlane(15, -25, "255, 0, 0");
         formation.addPlane(30, -50, "255, 0, 0");
-        formation.addPlane(45, -50, "255, 0, 0");
-        formation.addPlane(60, -25, "0, 128, 0");
-        formation.addPlane(75, 0, "0, 128, 0");
+        formation.addPlane(45, -50, "255, 255, 255");
+        formation.addPlane(60, -25, "255, 255, 255");
+        formation.addPlane(75, 0, "255, 255, 255");
 
         var target_y = stage.ctx.canvas.height - init_y;
         var target_x = stage.ctx.canvas.width - init_x;
@@ -287,7 +287,7 @@ var doodle = (function() {
     var init = function(jet_img_src) {
 
         var canvas = document.createElement('canvas');
-        canvas.id = "canvas_doodle";
+        canvas.id = "canvas_drvee";
         canvas.height = window.innerHeight || html.clientHeight;
         canvas.width = window.innerWidth || html.clientWidth;
         var canvasStyle = canvas.style;
@@ -310,7 +310,7 @@ var doodle = (function() {
     var destroy = function() {
         stage.destroy();
         setTimeout(function() {
-            document.body.removeChild(document.getElementById("canvas_doodle"));
+            document.body.removeChild(document.getElementById("canvas_drvee"));
         }, 50);
         delete stage;
     }
