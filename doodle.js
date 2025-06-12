@@ -138,12 +138,12 @@ var drvee = (function() {
         _l("starting from:" + init_x + " ," + init_y);
         var formation = new Formation(init_x, init_y);
 
-        formation.addPlane(0, -0, "255, 0, 0");
-        formation.addPlane(15, -25, "255, 0, 0");
+        formation.addPlane(0, -0, "0, 128, 0");
+        formation.addPlane(15, -25, "0, 128, 0");
         formation.addPlane(30, -50, "255, 0, 0");
-        formation.addPlane(45, -50, "255, 255, 255");
-        formation.addPlane(60, -25, "255, 255, 255");
-        formation.addPlane(75, 0, "255, 255, 255");
+        formation.addPlane(45, -50, "255, 0, 0");
+        formation.addPlane(60, -25, "0, 128, 0");
+        formation.addPlane(75, 0, "0, 128, 0");
 
         var target_y = stage.ctx.canvas.height - init_y;
         var target_x = stage.ctx.canvas.width - init_x;
